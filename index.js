@@ -4,7 +4,9 @@ const fs = require("fs");
 
 
 function dirsha(path) {
-  const text = fs.readdirSync(path).reduce((a, b) => {
+  const text = fs.readdirSync(path).filter(f => {
+    return f !== ".DS_Store";
+  }).reduce((a, b) => {
     return a + "/" + b;
   });
   return crypto.createHash("sha256").update(text, "utf8").digest("hex");
