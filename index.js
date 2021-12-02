@@ -7,12 +7,14 @@ function dirsha(path) {
   const text = fs.readdirSync(path).reduce((a, b) => {
     return a + "/" + b;
   });
-  console.log(text);
   return crypto.createHash("sha256").update(text, "utf8").digest("hex");
 }
 
 function main() {
-  const path = process.argv[2];
+  let path = ".";
+  if (process.argv.length >= 3) {
+    path = process.argv[2];
+  }
   const hash = dirsha(path);
   console.log(hash);
 }
