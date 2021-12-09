@@ -8,7 +8,7 @@ function dirsha(path) {
     return f !== ".DS_Store";
   }).reduce((a, b) => {
     return a + "/" + b;
-  });
+  }, "");
   return crypto.createHash("sha256").update(text, "utf8").digest("hex");
 }
 
