@@ -1,5 +1,5 @@
 # dirsha
-dirsha is hash calculator of file names and directory names in given directory. 
+dirsha is hash calculator of file names and directory names in given directory. dirsha can be used as Ethereum private key generator.
 
 ### Requirements
 * macOS or Ubuntu
